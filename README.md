@@ -11,3 +11,9 @@ Este repositorio contiene los ejercicios y actividades realizados durante el cur
 - **Arquitectura Cliente-Servidor**: Desarrollo de aplicaciones con comunicación entre cliente y servidor.
 - **Streams y Procesamiento de Datos**: Lectura y escritura de datos optimizados.
 - **Programación Funcional**: Uso de expresiones lambda y el paquete `Stream`.
+
+## Requisitos
+
+- Java Development Kit (JDK) 11 o superior.
+- IDE Eclipse.
+- Maven para la gestión de dependencias.
