@@ -1,0 +1,153 @@
+<diagram program="umletino" version="15.1"><zoom_level>6</zoom_level><element><id>UMLClass</id><coordinates><x>414</x><y>282</y><w>192</w><h>138</h></coordinates><panel_attributes>&lt;&lt;abstract class&gt;&gt;
+/Persona/
+--
+- id: int
+- nombre: String
+- apellido: String
+- edad: int
+- fechaNacimiento: LocalDate
+--
++ Persona(): void
++ Persona(String, String, int, Documento, String): void
+/+ tipoDePersona(): void/
++ getNumeroDocumento(): String
++ getTipoDocumento(): TipoDocumento
++ getNombreCompleto(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>678</x><y>324</y><w>162</w><h>60</h></coordinates><panel_attributes>Documento
+--
+- numero: String
+--
++ Documento(): void
++ Documento(String, TipoDocumento): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>600</x><y>336</y><w>90</w><h>30</h></coordinates><panel_attributes>lt=&lt;-
+m1= 1
+- documento</panel_attributes><additional_attributes>130;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>900</x><y>288</y><w>168</w><h>114</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+TipoDocumento
+--
+_+ DNI("Documento Nacional de Identidad")_
+_+ LC("Libreta Civica")_
+_+ LE("Libreta de Enrolamiento")_
+_+ CI("Cedula de Identidad")_
+_+ PAS("Pasaporte")_
+--
+- descripcion: String
+--
+- TipoDocumento(String): void
+_+ obtenerTipoDocumento(int): TipoDocumento_
+_+ mostrarTiposDeDocumento(): void_</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>834</x><y>336</y><w>78</w><h>30</h></coordinates><panel_attributes>lt=&lt;-
+m1= 1
+- tipo</panel_attributes><additional_attributes>110;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>528</x><y>504</y><w>246</w><h>72</h></coordinates><panel_attributes>&lt;&lt;abstract class&gt;&gt;
+/Empleado/
+--
+- fechaDelCargo: LocalDate
+- sueldo: double
+--
++ Empleado(): void
++ Empleado(String, String, int, Documento, String, String, double): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>372</x><y>414</y><w>114</w><h>102</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>170;10;170;120;10;120;10;150</additional_attributes></element><element><id>UMLClass</id><coordinates><x>276</x><y>504</y><w>210</w><h>102</h></coordinates><panel_attributes>Alumno
+--
+- fechaIngreso: LocalDate
+- cursos: Collection&lt;Integer&gt;
+--
++ Alumno(): void
++ Alumno(String, String, int, Documento, String, String): void
++ agregarCurso(Integer): void
+*+ tipoDePersona(): void*
+*+ guardar(): void*
+*+ modificar(): void*
+*+ eliminar(): void*</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>522</x><y>414</y><w>144</w><h>102</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;120;220;120;220;150</additional_attributes></element><element><id>UMLClass</id><coordinates><x>618</x><y>138</y><w>78</w><h>54</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+Persistencia
+--
+/+ guardar(): void/
+/+ modificar(): void/
+/+ eliminar(): void/</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>534</x><y>186</y><w>132</w><h>108</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>200;10;200;70;10;70;10;160</additional_attributes></element><element><id>UMLClass</id><coordinates><x>276</x><y>654</y><w>240</w><h>96</h></coordinates><panel_attributes>Profesor
+--
+- cursos: Collection&lt;Integer&gt;
+--
++ Profesor(): void
++ Profesor(String, String, int, Documento, String, String, double): void
++ agregarCurso(Integer): void
+*+ tipoDePersona(): void*
+*+ guardar(): void*
+*+ modificar(): void*
+*+ eliminar(): void*</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>390</x><y>570</y><w>216</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>340;10;340;120;10;120;10;140</additional_attributes></element><element><id>UMLClass</id><coordinates><x>522</x><y>654</y><w>258</w><h>84</h></coordinates><panel_attributes>Administrativo
+--
+
+--
++ Administrativo(): void
++ Administrativo(String, String, int, Documento, String, String, double): void
+*+ tipoDePersona(): void*
+*+ guardar(): void*
+*+ modificar(): void*
+*+ eliminar(): void*</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>642</x><y>570</y><w>18</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;140</additional_attributes></element><element><id>UMLClass</id><coordinates><x>786</x><y>654</y><w>264</w><h>84</h></coordinates><panel_attributes>Director
+--
+- carrera: String
+--
++ Director(): void
++ Director(String, String, int, Documento, String, String, double, String): void
+*+ tipoDePersona(): void*
+*+ guardar(): void*
+*+ modificar(): void*
+*+ eliminar(): void*</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>696</x><y>570</y><w>228</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;120;360;120;360;140</additional_attributes></element><element><id>UMLClass</id><coordinates><x>102</x><y>642</y><w>96</w><h>60</h></coordinates><panel_attributes>Curso
+--
+- id: int
+- nombre: String
+--
++ Curso(): void
++ Curso(String): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>246</x><y>126</y><w>168</w><h>84</h></coordinates><panel_attributes>SistemaIncripcion
+--
+
+--
++ SistemaIncripcion(): void
++ agregarPersona(Persona): void
++ mostrarPersonasInscriptas(String): void
++ cantidadDePersonasInscriptas(String): void
++ buscarPersona(String, TipoPersona): Persona
++ tomarAsistencia(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>324</x><y>204</y><w>204</w><h>90</h></coordinates><panel_attributes>lt=&lt;-
+m1= *
+- personas</panel_attributes><additional_attributes>310;130;310;90;10;90;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>48</x><y>6</y><w>150</w><h>54</h></coordinates><panel_attributes>SistemaInscripcionException
+--
+
+--
++ SistemaInscripcionException(int): void
++ SistemaIncripcionException(String): void
+*+ getMessage(): String*</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>48</x><y>108</y><w>150</w><h>84</h></coordinates><panel_attributes>ErrorSistemaInscripcion
+--
+- codigo: int
+- descripcion: String
+--
++ ErrorSistemaInscripcion(int): void
++ ErrorSistemaInscripcion(int, String): void
++ setCodigo(int): void
++ setDescripcion(String): void
++ getDescripcion(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>114</x><y>54</y><w>36</w><h>66</h></coordinates><panel_attributes>lt=&lt;-
+- error
+m1= 1</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>24</x><y>264</y><w>126</w><h>48</h></coordinates><panel_attributes>OrdenDocumento
+--
+
+--
++ OrdenDocumento(): void
+*+ compare(Persona, Persona): int*</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>78</x><y>204</y><w>198</w><h>72</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;100;10;40;310;40;310;10</additional_attributes></element><element><id>Relation</id><coordinates><x>72</x><y>306</y><w>354</w><h>72</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>570;100;10;100;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>156</x><y>264</y><w>126</w><h>60</h></coordinates><panel_attributes>OrdenEdad
+--
+- orden: boolean
+--
++ OrdenEdad(boolean): void
+- tipoOrden(): int
+*+ compare(Persona, Persona): int*</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>204</y><w>90</w><h>72</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;100;10;70;130;70;130;10</additional_attributes></element><element><id>Relation</id><coordinates><x>216</x><y>318</y><w>210</w><h>42</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>330;50;10;50;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>90</x><y>534</y><w>114</w><h>66</h></coordinates><panel_attributes>CursoRepositorio
+--
+
+--
++ agregarCurso(Curso): void
++ getCurso(Integer): Curso
++ getCurso(String): Curso
++ getCursos(): Collection&lt;Curso&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>402</y><w>186</w><h>78</h></coordinates><panel_attributes>GestorCursos
+--
+
+--
++ GestorCursos(): void
++ agregarCurso(String): void
++ getCursoID(Integer): Curso
++ getCursos(Collection&lt;Integer&gt;): Collection&lt;Curso&gt;
++ mostrarCursos(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>144</x><y>474</y><w>60</w><h>72</h></coordinates><panel_attributes>lt=&lt;-
+m1= 1
+- repositorio</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>144</x><y>594</y><w>42</w><h>60</h></coordinates><panel_attributes>lt=&lt;-
+m1= *
+- cursos</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>192</x><y>24</y><w>150</w><h>114</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;230;10;230;170</additional_attributes></element></diagram>
