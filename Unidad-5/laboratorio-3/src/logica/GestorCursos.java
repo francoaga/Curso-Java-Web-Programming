@@ -68,7 +68,7 @@ public class GestorCursos {
 		int i = 1;
 		
 		for (Curso curso : cursosAlta) {
-			System.out.println(String.format("%s. %s\n", i++, curso.getNombre()));
+			System.out.println(String.format("%s. %s", i++, curso.getNombre()));
 		}
 	}
 	
