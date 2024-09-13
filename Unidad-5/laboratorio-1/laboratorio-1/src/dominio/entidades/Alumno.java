@@ -72,7 +72,7 @@ public class Alumno extends Persona {
 	public String toString() {
 		// Llamo al toString de Persona y elimino la subcadena "Persona {"
 	    String personaString = super.toString().replace("Persona {", "");
-	    return String.format("Alumno {%s, cursos= %s, sueldo= %s}", personaString, cursos);
+	    return String.format("Alumno {%s, cursos= %s}", personaString, cursos);
 	}
 
 	/**

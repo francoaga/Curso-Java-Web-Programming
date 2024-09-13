@@ -47,6 +47,6 @@ public class Curso {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Curso {nombre= ", nombre);
+		return String.format("Curso {nombre= %s}", nombre);
 	}
 }
