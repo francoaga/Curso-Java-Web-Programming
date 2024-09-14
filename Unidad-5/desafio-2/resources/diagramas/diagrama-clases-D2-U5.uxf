@@ -1,4 +1,5 @@
-<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>590</x><y>50</y><w>210</w><h>190</h></coordinates><panel_attributes>/Producto/
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>590</x><y>40</y><w>210</w><h>180</h></coordinates><panel_attributes>&lt;&lt;abstract class&gt;&gt;
+/Producto/
 --
 - id: Integer
 - banco: Integer
@@ -6,19 +7,15 @@
 --
 + ProductoBancario(): void
 + ProductoBancario(int, int): void
-+ setBanco(int): void
-+ setSucursal(int): void
 # setNumero(Integer): void
 # getNumero(): Integer
 /+ generarNumeroProducto(): void/
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>390</x><y>350</y><w>220</w><h>130</h></coordinates><panel_attributes>Cuenta
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>390</x><y>350</y><w>220</w><h>100</h></coordinates><panel_attributes>Cuenta
 --
 
 --
 + Cuenta(): void
 + Cuenta(int, int, TipoCuenta): void
-+ setTipo(TipoCuenta):void
-+ getTipo(): TipoCuenta
 *+ generarNumeroProducto(): void*</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>380</x><y>590</y><w>260</w><h>210</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
 TipoCuenta
 --
@@ -35,18 +32,16 @@ _+ mostrarTiposDeCuenta(): void_
 _+ isHabilitado(TipoCuenta): boolean_
 _+ getDescripcion(TipoCuenta): String_
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>490</x><y>470</y><w>60</w><h>140</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>490</x><y>440</y><w>60</w><h>170</h></coordinates><panel_attributes>lt=&lt;-
 m1= 1
-- tipo</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>490</x><y>230</y><w>170</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>150;10;150;70;10;70;10;120</additional_attributes></element><element><id>UMLClass</id><coordinates><x>720</x><y>350</y><w>220</w><h>130</h></coordinates><panel_attributes>TarjetaCredito
+- tipo</panel_attributes><additional_attributes>10;150;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>490</x><y>210</y><w>170</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>150;10;150;90;10;90;10;140</additional_attributes></element><element><id>UMLClass</id><coordinates><x>720</x><y>350</y><w>220</w><h>100</h></coordinates><panel_attributes>TarjetaCredito
 --
 - claveSeguridad: Integer
 --
 + TarjetaCredito(): void
 + TarjetaCredito(int, int, int): void
-+ setClaveSeguridad(int):void
-+ setClaveSeguridad(): int
 *+ generarNumeroProducto(): void*
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>700</x><y>230</y><w>150</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70;130;70;130;120</additional_attributes></element><element><id>UMLClass</id><coordinates><x>800</x><y>600</y><w>270</w><h>140</h></coordinates><panel_attributes>Formatos
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>700</x><y>210</y><w>150</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;90;130;90;130;140</additional_attributes></element><element><id>UMLClass</id><coordinates><x>800</x><y>600</y><w>270</w><h>130</h></coordinates><panel_attributes>Formatos
 --
 _+ FORMATO_CUENTA: String_
 _+ FORMATO_CBU: String_
@@ -55,13 +50,12 @@ _+ FORMATO_BANCO_SUCURSAL: String_
 _+ FORMATO_CODIGO_SEGURIDAD_TC: String_
 --
 _+ getFormato(Integer, String): String_
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>550</x><y>470</y><w>320</w><h>150</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>300;130;300;90;10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>810</x><y>470</y><w>110</w><h>150</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>90;130;90;50;10;50;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>980</x><y>170</y><w>220</w><h>150</h></coordinates><panel_attributes>NumeroProductoGenerador
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>550</x><y>440</y><w>320</w><h>180</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>300;160;300;120;10;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>810</x><y>440</y><w>110</w><h>180</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>90;160;90;80;10;80;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>980</x><y>170</y><w>190</w><h>130</h></coordinates><panel_attributes>NumeroProductoGenerador
 --
-_- numeroCC: AtomicInteger_
-_- numeroCA: AtomicInteger_
-_- numeroTC: AtomicInteger_
+_- numeroCC: Integer_
+_- numeroCA: Integer_
+_- numeroTC: Integer_
 --
-- NumeroProductoGenerador(): void
 _+ generarNumeroCC(): int_
 _+ generarNumeroCA(): int_
 _+ generarNumeroTC(): int_</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>250</x><y>50</y><w>220</w><h>100</h></coordinates><panel_attributes>SistemaBancario
@@ -73,21 +67,18 @@ _+ generarNumeroTC(): int_</panel_attributes><additional_attributes></additional
 + mostrarProductos(): void
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>460</x><y>80</y><w>150</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
 m1= *
-- productos</panel_attributes><additional_attributes>130;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>510</x><y>220</y><w>490</w><h>150</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>470;10;420;10;420;100;10;100;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>930</x><y>310</y><w>170</w><h>130</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>150;10;150;110;10;110</additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>590</y><w>230</w><h>80</h></coordinates><panel_attributes>ProductoException
+- productos</panel_attributes><additional_attributes>130;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>510</x><y>220</y><w>490</w><h>150</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>470;10;420;10;420;100;10;100;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>930</x><y>290</y><w>170</w><h>150</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>150;10;150;130;10;130</additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>590</y><w>230</w><h>80</h></coordinates><panel_attributes>ProductoException
 --
 
 --
 + ProductoException(int): void
-*+ getMessage(): String*</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>740</y><w>230</w><h>160</h></coordinates><panel_attributes>ErrorProducto
+*+ getMessage(): String*</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>740</y><w>230</w><h>90</h></coordinates><panel_attributes>ErrorProducto
 --
 - codigo: int
 - descripcion: String
 --
 + ErrorProducto(int): void
 + ErrorProducto(int, String): void
-+ setDescripcion(String): void
-+ getDescripcion(): String
-+ setCodigo(int): void
-+ getCodigo(): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>660</y><w>60</w><h>100</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>660</y><w>60</w><h>100</h></coordinates><panel_attributes>lt=&lt;-
 m1= 1
-- error</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>470</y><w>300</w><h>140</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;120;10;70;280;70;280;10</additional_attributes></element></diagram>
+- error</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>440</y><w>300</w><h>170</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;150;10;100;280;100;280;10</additional_attributes></element></diagram>
