@@ -1,0 +1,77 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>950</x><y>300</y><w>170</w><h>140</h></coordinates><panel_attributes>Registro&lt;K,V&gt;
+--
+- clave: K
+- valor: V
+--
++ Registro(K,V)
+*+ getKey(): K*
+*+ getValue(): V*
+*+ setKey(K key): void*
+*+ setValue(V value): void*
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>130</x><y>300</y><w>340</w><h>140</h></coordinates><panel_attributes>GestorTablasDelSistema
+--
+
+--
++ GestorTablasDelSistema()
++ agregarNuevaTabla(String, TablaDelSistema&lt;K,V&gt;): void
++ agregarRegistroAUnaTabla(String, Registro&lt;K,V&gt;): void
++ getRegistro(String, K): Registro&lt;K,V&gt;
++ mostrarTodaLaTabla(String): void
++ existeTabla(String): boolean
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>550</x><y>300</y><w>270</w><h>170</h></coordinates><panel_attributes>Tabla&lt;K,V&gt;
+--
+
+--
++ Tabla()
++ agregarRegistro(Registro&lt;K,V&gt;): void
++ mostrarTabla(): void
++ buscarRegistro(K): Registro&lt;K,V&gt;
++ getTablaOrdenada(): TablaDelSistema&lt;K,V&gt;
+*+ guardar(): void*
+*+ modificar(): void*
+*+ eliminar: void*
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>810</x><y>360</y><w>160</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
+- registros
+m1= *</panel_attributes><additional_attributes>140;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>960</x><y>100</y><w>150</w><h>130</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+Pair&lt;K,V&gt;
+--
+
+--
+/+ getKey(): K/
+/+ getValue(): V/
+/+ setKey(K key): void/
+/+ setValue(V value): void/
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1030</x><y>220</y><w>30</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>460</x><y>360</y><w>110</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
+- tablas
+m1= *</panel_attributes><additional_attributes>90;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>40</x><y>100</y><w>210</w><h>100</h></coordinates><panel_attributes>Documento
+--
+- tipo: String
+- numero: String
+--
++ Documento()
++ Documento(String, String)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>290</x><y>100</y><w>210</w><h>100</h></coordinates><panel_attributes>Telefono
+--
+- codigo: Integer
+- pais: String
+--
++ Telefono()
++ Telefono(Integer, String)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>610</x><y>110</y><w>150</w><h>100</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+Persistencia
+--
+--
+/+ guardar(): void/
+/+ modificar(): void/
+/+ eliminar: void/
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>670</x><y>200</y><w>30</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>UMLClass</id><coordinates><x>140</x><y>530</y><w>270</w><h>140</h></coordinates><panel_attributes>Validador
+--
+
+--
+_+ validarEmail(String): boolean_
+_+ validarContrasenia(String): boolean_
+_+ validarNumeroDocumento(String): boolean_
+_+ validarNombre(String): boolean_
+_+ validarNombreCursos(String): boolean_
+_+ validarFechasDDMMYYYY(String): boolean_</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>430</y><w>30</w><h>120</h></coordinates><panel_attributes>lt=&lt;..</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element></diagram>
