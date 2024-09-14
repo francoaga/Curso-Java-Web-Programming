@@ -51,7 +51,7 @@ public class GestorTablas {
 	public <K,V> void mostrarTabla(String nombreTabla) {
 		Tabla<K, V> tabla = getTabla(nombreTabla);
 		
-		System.out.println(String.format("\n\t----------TABLA '%s'----------a", nombreTabla.toUpperCase()));
+		System.out.println(String.format("\n\t----------TABLA '%s'----------", nombreTabla.toUpperCase()));
 		tabla.mostrarTabla();
 		
 	}
