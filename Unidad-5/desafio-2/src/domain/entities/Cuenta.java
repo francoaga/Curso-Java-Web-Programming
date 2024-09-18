@@ -7,7 +7,7 @@ import domain.exceptions.ProductoException;
 import utilities.Formatos;
 
 public class Cuenta extends Producto {
-private TipoCuenta tipo;
+	private TipoCuenta tipo;
 	
 	/*Constructor por defecto*/
 	public Cuenta() { }
