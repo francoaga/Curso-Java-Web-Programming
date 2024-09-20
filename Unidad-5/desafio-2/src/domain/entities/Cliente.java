@@ -6,20 +6,40 @@ import java.util.List;
 import java.util.Objects;
 
 import utilities.FechaParser;
+import utilities.Validador;
 
 public class Cliente {
+	private String nombre;
 	private Documento documento;
 	private LocalDate fechaNacimiento;
 	private List<Producto> productos;
 	
 	
-	public Cliente(Documento documento, String fechaNacimiento) {
+	public Cliente() {	}
+	
+	public Cliente(String nombre, Documento documento, String fechaNacimiento) {
+		setNombre(nombre);
 		setDocumento(documento);
 		setFechaNacimiento(fechaNacimiento);
 		this.productos = new ArrayList<>();
 	}
 
-
+	/**
+	 * Establece el nombre de un cliente.
+	 * Si el formato del nombre no es valido, se lanza una excepcion 
+	 * IllegalArgumentException.
+	 * 
+	 * @param nombre El nombre de un cliente.
+	 * @throws IllegalArgumentException Si el nombre no es valido.
+	 * @see Validador Para obtener más detalles sobre las validaciones del nombre.
+	 */
+	public void setNombre(String nombre) {
+		if(!Validador.validarNombre(nombre))
+			throw new IllegalArgumentException("El formato del nombre no es valido.");
+		
+		this.nombre = nombre;
+	}
+	
 	/**
 	 * Establece la fecha de nacimiento de un cliente.
 	 * Si la fecha no cumple con el formato de dd/MM/yyyy, se lanza una
@@ -45,6 +65,10 @@ public class Cliente {
 		if(documento == null)
 			throw new IllegalArgumentException("Referencia nula para el documento.");
 		this.documento = documento;
+	}
+	
+	public Documento getDocumento() {
+		return this.documento;
 	}
 	
 	/**
@@ -81,7 +105,7 @@ public class Cliente {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Cliente {numero documento= %s, tipo documento= %s, fecha nacimiento: %s}",
-				documento.getNumero(), documento.getTipo(), fechaNacimiento.toString());
+		return String.format("Cliente {nombre: %s, numero documento= %s, tipo documento= %s, fecha nacimiento: %s}",
+				nombre, documento.getNumero(), documento.getTipo(), fechaNacimiento.toString());
 	}
 }
