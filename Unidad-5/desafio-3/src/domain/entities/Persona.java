@@ -48,7 +48,7 @@ public class Persona {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Persona {nombre= %s, apellido= %s, documento= %s, edad= %s, fechaNacimiento= %s}",
+		return String.format("Persona {nombre= %s, apellido= %s, documento= %s, edad= %s}",
 				nombre, apellido, documento, edad);
 	}
 	

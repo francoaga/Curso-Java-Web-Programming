@@ -46,13 +46,15 @@ public class SistemaTurnos {
 			throw new IllegalArgumentException("No hay turnos en el sistema");
 
 		while(!turnos.isEmpty()) {
-			System.out.println("Esta siendo atendido: " + turnos.poll());
+			Turno turnoActual = turnos.poll();
+			System.out.println(String.format("Esta siendo atendido: %s", turnoActual));
+			
 			Thread.sleep(tiempoDeEspera);
 			
 			Turno turnoSiguiente= turnos.peek();
 			
 			if(Objects.nonNull(turnoSiguiente)) {
-				System.out.println("Siguiente en la fila: " + turnoSiguiente);
+				System.out.println(String.format("Siguiente en la fila: %s",  turnoSiguiente));
 				System.out.println("----------------------------------------");
 				Thread.sleep(tiempoDeEspera);
 			}
