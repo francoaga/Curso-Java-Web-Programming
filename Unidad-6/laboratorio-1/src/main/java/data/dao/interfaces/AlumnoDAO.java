@@ -1,6 +1,6 @@
 package data.dao.interfaces;
 
-import domain.entities.Alumno;
+import dto.AlumnoDTO;
 
-public interface AlumnoDAO extends DAO<Alumno, Integer> {
+public interface AlumnoDAO extends DAO<AlumnoDTO, Integer> {
 }

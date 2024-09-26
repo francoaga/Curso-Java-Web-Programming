@@ -6,7 +6,7 @@ import java.util.List;
 
 import data.dao.exceptions.DAOException;
 import data.dao.interfaces.AlumnoDAO;
-import domain.entities.Alumno;
+import dto.AlumnoDTO;
 
 public class MySQLAlumnoDAO implements AlumnoDAO {
 	
@@ -29,13 +29,13 @@ public class MySQLAlumnoDAO implements AlumnoDAO {
 	}
 	
 	@Override
-	public boolean insertar(Alumno a) throws DAOException {
+	public boolean insertar(AlumnoDTO a) throws DAOException {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean modificar(Alumno a) throws DAOException {
+	public boolean modificar(AlumnoDTO a) throws DAOException {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -47,13 +47,13 @@ public class MySQLAlumnoDAO implements AlumnoDAO {
 	}
 
 	@Override
-	public Alumno obtener(Integer id) throws DAOException {
+	public AlumnoDTO obtener(Integer id) throws DAOException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Alumno> obtenerTodos() throws DAOException {
+	public List<AlumnoDTO> obtenerTodos() throws DAOException {
 		// TODO Auto-generated method stub
 		return null;
 	}
